@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Scooby's Website</title>
+
+     <style>
+
+	//Red: rgb(255, 66, 95);
+	//Gray: rgb(239, 239, 239);
+	//Dark Gray: rgb(169, 169, 169);
+	//Blue: rgb(194, 232, 245);
+
+	#myFakeElement { color:red ; }
+
+	* {
+	    box-sizing: border-box;
+	}
+
+	body {
+	     background-color: rgb(239, 239, 239);
+	}
+
+	.main {
+	     background-color: rgb(255, 255, 255);
+	     position:absolute;
+	     top:0;
+	     left:0;
+	     right:0;
+	     margin:10 auto;
+	     height: 70px;
+	}
+
+	h2 {
+	     font-family: Century Gothic;
+	     color: rgb(255, 66, 95);
+	}
+
+	#title {
+	     font-family: Century Gothic;
+                     font-size: 36px;
+                     text-align: left;
+                     color: rgb(255, 66, 95);
+                     margin:1%;
+	     margin-left:1.25%;
+                     //word-spacing: 20px;
+	     z-index: 2;
+	}
+
+
+	#main-picture {
+	     margin-top: 70px;
+	     padding-top: 5%;
+	     padding-left: 20%;
+	}
+
+	#main-picture h2 {
+	     font-family: Century Gothic;
+                     font-size: 54px;
+                     text-align: center;
+                     color: rgb(255, 66, 95);
+	     text-shadow: -2px 4px 0px rgb(194, 232, 245);
+	     float: right;
+	     margin-right: 20%;
+	}
+
+	#navigation-bar {
+	     font-family: Century Gothic;
+	     font-size: 20px;
+	     position: absolute;
+	     top: 10px;
+	     right: 50px;
+	     list-style-type: none;
+	     margin: 0;
+	     padding: 0;
+	     overflow: hidden;
+	   //  background-color: white;
+	     width: 40%;
+	}
+
+	#navigation-bar li {
+	     float: right;
+	}
+
+	#navigation-bar li:hover {
+	     background-color: rgb(245, 245, 245);
+	}
+
+	#navigation-bar li a {
+	     color: black;
+	     display: block;
+	     text-align: center;
+	     padding: 14px 16px;
+	     text-decoration: none;
+	}
+
+	#navigation-bar li a:hover {
+	     color: rgb(255, 66, 95);
+	}
+
+	.subheading {
+	     font-family: Century Gothic;
+                     font-size: 28px;
+                     text-align: left;
+                     color: rgb(255, 66, 95);
+                     margin:1%;
+                     //word-spacing: 20px;
+	     z-index: 2;
+	}
+
+	p, ul {
+	     font-family: Gabriola, serif;
+	     font-size: 1.5em;
+	     margin: 1%;
+	}
+
+	p span {
+	     background-color: rgb(194, 232, 245);
+	}	
+
+//timeline stuff start
+#timelineTitle {
+   font-family: Century Gothic;
+   font-size: 20px;
+}
+
+.contentStyle {
+  font-family: Gabriola, serif;
+  font-size: 1.5em;
+  margin: 1%;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: rgb(194, 232, 245);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid rgb(255, 66, 95);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+//timeline stuff end
+          
+     </style>
+     </head>
+
+     <body>
+	<div class = "main">
+	     <h1 id = "title">Scoobs the Pupper</h1>  
+	</div>
+
+	<div id = "main-picture">
+	     <a ref="https://lh3.googleusercontent.com/L5lPxRxXXGSU3OWhdN_QuxiWHjdJyw3ns8oS_ggMuYirjyR1afD1hI9hD3ROk-41pimql1D33ELR3omDOFK4uZskhAgl1NJ5I0ogSkU3aAl9haP92bL8jVIpmgVHlTrELW8ebXeUig=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/L5lPxRxXXGSU3OWhdN_QuxiWHjdJyw3ns8oS_ggMuYirjyR1afD1hI9hD3ROk-41pimql1D33ELR3omDOFK4uZskhAgl1NJ5I0ogSkU3aAl9haP92bL8jVIpmgVHlTrELW8ebXeUig=w240-h340-p-k" width = 20%/> </a>
+	     <h2 id = "intro">woof! <br> welcome to my website <br> all about me!</h2>
+	</div>
+
+	<div>
+	     <ul  id = "navigation-bar">
+	          <li><a href="#gallery">gallery</a></li>
+	          <li><a href="#fun-facts">fun facts</a></li>
+	          <li><a href="#about">about</a></li>
+	     </ul>
+	</div>
+
+	<h3 class = "subheading" id = "about">about</h3>
+	<p>Hello! My name is <span>Scooby</span> and I'm a Mini Goldendoodle. I have the playfulness of a Golden Retriever thanks to my mom, Vixie, and the intelligence of a Poodle from my dad Robin -- <span> I'm an all-in-one!</span> I was born on May 2, 2022 and brought to my forever home on July 2, 2022, one of the most memorable days of my life. I was born into a litter of 7, but I love it here because I get all the attention and pampering. My hoomans are amazing; they rub my belly, brush my luscious hair, feed me, and play with me. But, sometimes, they become too much to handle. They constantly make me pose for something they call Instygram posts? I know I'm irresistibly cute, but I just wanna sleep! </p>
+	<a ref="https://lh3.googleusercontent.com/75oYRGGNu9dQDO-vzlexPNvS9bJfVFgUV_qiqrLCWU4HRrTfxMD7JFEqiNk0y3FlZeuiCiTcKGNXeqA6oFJBizrzx0Eo48GQSmrZ7dizcnvDOdwoRu2qX6-bS-bP88cVnfZOA_Wgbg=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/75oYRGGNu9dQDO-vzlexPNvS9bJfVFgUV_qiqrLCWU4HRrTfxMD7JFEqiNk0y3FlZeuiCiTcKGNXeqA6oFJBizrzx0Eo48GQSmrZ7dizcnvDOdwoRu2qX6-bS-bP88cVnfZOA_Wgbg=w600-h315-p-k" /> </a>
+
+	<h3 class = "subheading" id = "fun-facts">fun facts</h3>
+	<ul>
+	     <li>I was born on National Truffle Day. Just like everyone loves the decadent chocolate confection, everyone loves me. EVERYONE!</li>
+	     <li>I love eating grass</li>
+	     <li>I LOVE my multivitamins</li>
+	     <li>I find joy in crying all night until my owners come sleep next to me</li>
+	</ul>
+
+	<h3 class = "subheading" id = "fun-facts">timeline</h3>
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2 id = "timelineTitle">May 2, 2022</h2>
+      <p>Scooby is born!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>July 2, 2022</h2>
+      <p>Scooby comes to his new forever home!</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>September 6, 2022</h2>
+      <p>Scooby's first day of puppy school!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>September 10, 2022</h2>
+      <p>Scooby's first time boarding!</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>September 17, 2022</h2>
+      <p>Scooby's first grooming! It did not go well.</p>
+    </div>
+  </div>
+</div>
+
+	<script>
+
+                </script>
+     </body>
+</html>
