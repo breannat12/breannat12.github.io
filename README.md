@@ -9,11 +9,14 @@ I made this website to practice the skills I learned throughout the Khan Academy
 
 I made most of the layout and design using elements and tags I learned in the Khan Academy course, but I also looked up additional videos and websites to learn how to make my website look more appealing.
 One example of this is the changing of colors when the mouse hovers over the navigation bar as shown:
+
 ![pages](https://user-images.githubusercontent.com/110355969/198169373-d40309ee-d54c-4f22-b77f-a0e740a8d72f.png)
 
 Another element I found on the web and was able to incorporate into my website was the timeline, and I think it came out very pretty!
 I used this website for reference: https://www.w3schools.com/howto/howto_css_timeline.asp
+
 ![3](https://user-images.githubusercontent.com/110355969/198169463-83545c33-0911-46d5-bd03-372d1c67e26c.png)
 
 One thing I would like to improve on with further experience is the scaling and positioning of items based on the screen-size, as it isn't ordered correctly when I minimize the screen right now:
+
 ![image](https://user-images.githubusercontent.com/110355969/198169642-65ac9eea-1f23-46c0-8a37-bd637a3498b6.png)
